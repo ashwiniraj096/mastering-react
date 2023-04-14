@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML</title>
-</head>
-<body>
-<div id="root"></div>
-</body>
-<script>
-   const hello = document.createElement('h1');
-   hello.innerHTML = "Hello world from JS" ;
-   const rootEle = document.getElementById('root');
-   rootEle.appendChild(hello);
-</script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>React</title>
+  </head>
+  <body>
+    <!-- elements will be rendered -->
+    <h1>on top of root div</h1>
+    <div id="root">
+      <!-- 
+            elements here will be replaced by root.render();
+            REACT WORKS ONLY HERE!!!!!!
+         -->
+    </div>
+    <!-- elements wll be rendered -->
+    <h1>on bottom of root div</h1>
+
+    <script type="module" src="./App.js" />
+  </body>
 </html>
