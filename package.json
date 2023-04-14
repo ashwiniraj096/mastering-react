@@ -1,0 +1,14 @@
+{
+  "name": "mastering-react",
+  "version": "1.0.0",
+  "description": "mastering-react",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Ashwini R",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  }
+}
