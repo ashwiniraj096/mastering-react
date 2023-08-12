@@ -1,0 +1,50 @@
+
+package manager: npm
+npm init -> it creates a package.json file 
+package.json is a configuration file for npm
+
+Application dependencies are managed by npm
+1. Dev dependencies: required in development phase
+2. normal dependencies: required in production as well
+
+Bundler used is Parcel
+npm install -D parcel 
+
+ "devDependencies": {
+    "parcel": "^2.9.3"
+  }
+
+signs in package.json file
+~: Parcel will automatically upgrade the library to the latest major version. e.g., 3.0.0
+^:Parcel will automatically upgrades to latest available minor version. e.g., 2.9.4
+
+package-lock.json : It keeps the track of exact version of the dependencies used in the project
+
+node_modules :  Its like the database of packages used in project.
+Transitive dependencies are stored in node_modules, which means one package can have dependencies over other packages which inturn 
+have dependencies of other packages.
+
+node_modules will not be pushed to repository
+
+npx parcel index.html
+
+-> npx: execute the parcel package
+
+Bundler:
+1. local server
+2. dev build
+3. Hot module replacement : file watching algorithm used by parcel to track changes in files, as soon as changes happened
+and save, it creates new build and updates the changes in ui
+4. Faster builds: due to cache - .parcel-cache
+5. Image optimization
+6. minify the files
+7. bundling the files
+8. Compress the files
+9. support old browsers by creating diff bundles
+10. Code Splitting
+11. Error handling by giving error suggestions
+12. host an app on https
+13. Tree shaking - remove unused code
+
+browserslist
+what all browsers the app will support, this is configured in package.json
