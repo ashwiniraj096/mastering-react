@@ -26,9 +26,15 @@ have dependencies of other packages.
 
 node_modules will not be pushed to repository
 
-npx parcel index.html
+npx parcel index.html -> dev build
+npx parcel build index.html -> prod build
 
 -> npx: execute the parcel package
+
+
+npm scripts:
+"start": "parcel index.html"
+"build": "parcel build index.html"
 
 Bundler:
 1. local server
@@ -48,3 +54,5 @@ and save, it creates new build and updates the changes in ui
 
 browserslist
 what all browsers the app will support, this is configured in package.json
+
+prod builds are so compressed and minified, the output will be less size files compare to the dev build

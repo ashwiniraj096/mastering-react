@@ -1,0 +1,25 @@
+JSX
+
+ HTML like syntax - not HTML inside Javascript
+ JSX is transpiled into JS before it reaches JS engine(browser)
+ Parcel does this transpilation by Babel
+ JSX converted to React element(object) which inturn converts to html element
+
+BABEL is JS compiler
+
+React Component
+Everything in React is Component
+1. Class based Components
+2. Functional Components
+
+Functional Components: This is a JS Function which returns a JSX/ react element.
+
+Component Compositions: This is rendering JS components inside a Component
+<Component1>
+    </Component2>
+</Component1>
+
+Cross-site scripting
+
+
+
