@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "mastering-react",
   "scripts": {
+    "start": "npx parcel index.html",
     "test": "jest"
   },
   "author": "Ashwini R",

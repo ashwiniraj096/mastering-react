@@ -4,10 +4,11 @@ const RestrauntCard = ({
   name,
   cuisines,
   cloudinaryImageId,
-  lastMileTravelString,
+  sla,
   avgRating,
   costForTwo,
 }) => {
+  console.log(sla, "sla");
   return (
     <div className="card">
       <img src={CDN_URL + cloudinaryImageId} />
@@ -15,7 +16,7 @@ const RestrauntCard = ({
       <h3>{cuisines.join(", ")}</h3>
       <h3>{avgRating} stars</h3>
       <h4>Cost for two: {costForTwo}</h4>
-      <h4>{lastMileTravelString} minutes</h4>
+      <h4>{sla?.slaString}</h4>
     </div>
   );
 };

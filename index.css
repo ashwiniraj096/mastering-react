@@ -3,6 +3,7 @@
   justify-content: space-between;
   margin: 10px;
   border: 1px solid black;
+  padding: 5px 20px;
 }
 
 .nav-items > ul {
@@ -19,7 +20,7 @@
 }
 
 .card {
-  width: 200px;
+  width: 250px;
   border: 1px solid black;
   padding: 10px;
   margin: 10px;
@@ -37,4 +38,44 @@
 .filter-btn {
   padding: 10px;
   cursor: pointer;
+}
+
+.filter {
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shimmer-card {
+  height: 300px;
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  margin: 10px;
+  background: #f6f7f8;
+  background-image: linear-gradient(
+    to right,
+    #f6f7f8 0%,
+    #edeef1 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 800px 104px;
+  display: inline-block;
+  position: relative;
+  animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -800px 0;
+  }
+  100% {
+    background-position: 800px 0;
+  }
 }

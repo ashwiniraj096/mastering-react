@@ -9,3 +9,7 @@ Footer - links - Copyright
 
 Named export and imports
 Default export and import
+
+# Hooks are react functions
+
+useEffect() is called after Component is rendered.

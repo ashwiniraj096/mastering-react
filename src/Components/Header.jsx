@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 
 // Composing Comopnentss
@@ -8,6 +9,7 @@ const Title = () => (
 );
 
 const Header = () => {
+  const [loginText, setLoginText] = useState(true);
   return (
     <div className="header">
       <Title />
@@ -17,6 +19,9 @@ const Header = () => {
           <li>About</li>
           <li>Contact</li>
           <li>Cart</li>
+          <button className="login" onClick={() => setLoginText(!loginText)}>
+            {loginText ? "Login" : "Logout"}
+          </button>
         </ul>
       </div>
     </div>
