@@ -1,10 +1,10 @@
-import AppLayout from "./App";
+// import AppLayout from "./App";
 
-const routesList = [
-  {
-    path: "/",
-    element: <AppLayout />,
-  },
-];
+// const routesList = [
+//   {
+//     path: "/",
+//     element: <AppLayout />,
+//   },
+// ];
 
-export default routesList;
+// export default routesList;
