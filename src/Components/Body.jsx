@@ -3,7 +3,7 @@ import RestrauntCard from "./RestaurantCard";
 import ShimmerComponent from "./Shimmer/ShimmerBody";
 import FilterBar from "./FilterBar";
 
-const Body = ({ restrautList }) => {
+const Body = () => {
   const [listOfRestaurants, setRestaurantList] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
