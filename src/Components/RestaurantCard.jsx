@@ -8,7 +8,6 @@ const RestrauntCard = ({
   avgRating,
   costForTwo,
 }) => {
-  console.log(sla, "sla");
   return (
     <div className="card">
       <img src={CDN_URL + cloudinaryImageId} />

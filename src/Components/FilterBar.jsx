@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 const FilterBar = ({ listOfRestaurants, setFilteredRestaurants }) => {
-  console.log(listOfRestaurants, "listOfRestaurants");
   const [searchString, setSearchString] = useState("");
   return (
     <div style={{ display: "flex" }}>
@@ -32,7 +31,6 @@ const FilterBar = ({ listOfRestaurants, setFilteredRestaurants }) => {
               res?.info?.name.toLowerCase().includes(searchString.toLowerCase())
             );
             setFilteredRestaurants(searchedRestaurants);
-            console.log(value, "val");
           }}
         />
       </div>

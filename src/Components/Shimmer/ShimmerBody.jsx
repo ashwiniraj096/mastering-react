@@ -3,7 +3,7 @@ const ShimmerComponent = () => {
   return (
     <div className="shimmer-container">
       {shimmerCards.map((_, index) => {
-        return <div className="shimmer-card" id={index}></div>;
+        return <div className="shimmer-card" key={index}></div>;
       })}
     </div>
   );
