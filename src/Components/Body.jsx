@@ -3,26 +3,19 @@ import RestrauntCard from "./RestaurantCard";
 import ShimmerComponent from "./Shimmer/ShimmerBody";
 import FilterBar from "./FilterBar";
 import { Link } from "react-router-dom";
+import useRestaurantList from "../utils/useRestorantList";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
-  const [listOfRestaurants, setRestaurantList] = useState([]);
+  const listOfRestaurants = useRestaurantList();
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-
-  const fetchRestaurantsList = async () => {
-    const response = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
-    const result = await response.json();
-    const restaurantsList =
-      result?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants;
-    setRestaurantList(restaurantsList);
-    setFilteredRestaurants(restaurantsList);
-  };
+  const onlineStatus = useOnlineStatus();
 
   useEffect(() => {
-    fetchRestaurantsList();
-  }, []);
+    setFilteredRestaurants(listOfRestaurants);
+  }, [listOfRestaurants]);
+
+  if (!onlineStatus) return <h1>You're Offline 😶</h1>;
 
   return listOfRestaurants.length === 0 ? (
     <ShimmerComponent />
@@ -32,11 +25,14 @@ const Body = () => {
         listOfRestaurants={listOfRestaurants}
         setFilteredRestaurants={setFilteredRestaurants}
       />
-      <div className="restaurant-list">
+      <div className="restaurant-list flex flex-wrap justify-center">
         {filteredRestaurants.map((restaurant) => {
           return (
-            <Link to={"/restaurant/" + restaurant.info.id}>
-              <RestrauntCard {...restaurant.info} key={restaurant.info.id} />
+            <Link
+              to={"/restaurant/" + restaurant.info.id}
+              key={restaurant.info.id}
+            >
+              <RestrauntCard {...restaurant.info} />
             </Link>
           );
         })}
