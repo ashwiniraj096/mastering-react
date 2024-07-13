@@ -5,11 +5,14 @@ import FilterBar from "./FilterBar";
 import { Link } from "react-router-dom";
 import useRestaurantList from "../utils/useRestorantList";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import WithLabelComponent from "./WithLable";
 
 const Body = () => {
   const listOfRestaurants = useRestaurantList();
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const onlineStatus = useOnlineStatus();
+
+  const LabelAddedComponent = WithLabelComponent(RestrauntCard);
 
   useEffect(() => {
     setFilteredRestaurants(listOfRestaurants);
@@ -26,13 +29,17 @@ const Body = () => {
         setFilteredRestaurants={setFilteredRestaurants}
       />
       <div className="restaurant-list flex flex-wrap justify-center">
-        {filteredRestaurants.map((restaurant) => {
+        {filteredRestaurants?.map((restaurant) => {
           return (
             <Link
               to={"/restaurant/" + restaurant.info.id}
               key={restaurant.info.id}
             >
-              <RestrauntCard {...restaurant.info} />
+              {restaurant?.info?.aggregatedDiscountInfoV3 ? (
+                <LabelAddedComponent {...restaurant?.info} />
+              ) : (
+                <RestrauntCard {...restaurant?.info} />
+              )}
             </Link>
           );
         })}

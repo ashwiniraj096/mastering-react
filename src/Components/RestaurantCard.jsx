@@ -10,17 +10,19 @@ const RestrauntCard = ({
 }) => {
   return (
     <div className="card w-[300px] p-2 m-2 rounded-2xl border-2 border-grey-50 ">
-      <img
-        src={CDN_URL + cloudinaryImageId}
-        className="image object-cover rounded-2xl mb-4 shadow-lg"
-      />
+      <div className="mb-4 shadow-lg shadow-gray-600">
+        <img
+          src={CDN_URL + cloudinaryImageId}
+          className="image  h-60 w-full rounded-xl"
+        />
+      </div>
 
       <div>
         <h2 className="font-bold">{name}</h2>
         <h3 className="font-semibold">
           ⭐{avgRating} {sla?.slaString}
         </h3>
-        <h3 className="text-large antialiased text-gray-400">
+        <h3 className="text-large antialiased text-gray-400 truncate w-11/12">
           {cuisines.join(", ")}
         </h3>
         <h4>Cost for two: {costForTwo}</h4>

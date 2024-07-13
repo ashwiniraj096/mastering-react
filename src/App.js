@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM, { createRoot } from "react-dom/client";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
@@ -8,17 +8,23 @@ import AboutPage from "./Components/About";
 import ErrorPage from "./Components/ErrorPage";
 import ContactUs from "./Components/ContactUs";
 import RestaurantDetails from "./Components/RestaurantMenu";
-
-const Footer = () => {
-  return <h4></h4>;
-};
+import { ThemeContext, UserContext } from "./utils/contexts";
 
 const AppLayout = () => {
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    setUser({ name: "Ashwini" });
+  }, []);
+
   return (
     <>
-      <Header />
-      <Outlet />
-      <Footer />
+      <UserContext.Provider value={{ user, setUser }}>
+        <ThemeContext.Provider value="light">
+          <Header />
+          <Outlet />
+        </ThemeContext.Provider>
+      </UserContext.Provider>
     </>
   );
 };
