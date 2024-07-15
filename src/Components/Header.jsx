@@ -36,7 +36,7 @@ const Header = () => {
             <label htmlFor="input">Dark Theme</label>
             <input
               type="checkbox"
-              checked={theme === "light"}
+              defaultChecked={theme === "light"}
               onClick={(e) => {
                 console.log(e.target.checked);
               }}
